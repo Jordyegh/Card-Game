@@ -1,0 +1,352 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: #222;
+  font-family: "Roboto", sans-serif; }
+
+.hitmark {
+  cursor: none; }
+
+.hitmarker {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  background-image: url("../../img/misc/hitmarker.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none; }
+
+.scrollbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #C0B524;
+  background-image: url("../../img/misc/noise.png"); }
+.scrollbar::-webkit-scrollbar {
+  width: 10px; }
+.scrollbar::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #9B2A2A;
+  background-image: url("../../img/misc/noise.png"); }
+
+.buttons {
+  display: flex;
+  justify-content: space-around; }
+  .buttons div {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    background-color: #444;
+    background-image: url("../../img/misc/noise.png");
+    color: #FFF;
+    font-size: 1.25em;
+    transition: 0.2s;
+    cursor: pointer; }
+    .buttons div.buttons--switch:hover {
+      background-color: #AA4; }
+    .buttons div.buttons--clear:hover {
+      background-color: #A44; }
+    .buttons div.buttons--generate:hover {
+      background-color: #A4A; }
+    .buttons div.buttons--ready:hover {
+      background-color: #4A4; }
+
+.turn-button {
+  width: 250px;
+  position: absolute;
+  left: 50vw;
+  top: 50vh;
+  padding: 5px 0;
+  text-align: center;
+  background-color: #0A0;
+  color: #FFF;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em; }
+  .turn-button:hover {
+    background-color: #0C0; }
+
+.player-mana {
+  display: flex;
+  height: 349px;
+  min-width: 35px;
+  flex-flow: column wrap;
+  position: absolute;
+  left: 19px;
+  padding: 10px 2px;
+  transform: translate(-50%, -50%); }
+  .player-mana--player1 {
+    top: 75vh;
+    left: 50px; }
+  .player-mana--player2 {
+    top: 25vh;
+    left: calc(100vw - 64px); }
+  .player-mana--crystal {
+    width: 35px;
+    height: 34px;
+    background-image: url("../../img/misc/mana.png");
+    background-position: center;
+    background-size: cover; }
+
+.player-health {
+  display: flex;
+  width: 80px;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding-top: 25px;
+  background-image: url("../../img/misc/health.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: #FFF;
+  font-size: 1.5em;
+  font-weight: 900;
+  transform: translate(-50%, -50%); }
+  .player-health--player1 {
+    top: 75vh;
+    left: calc(100vw - 65px); }
+  .player-health--player2 {
+    top: 25vh;
+    left: 55px; }
+
+.crosshair {
+  width: 75px;
+  height: 60px;
+  position: absolute;
+  background-image: url("../../img/misc/hitmarker.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  cursor: none; }
+
+.battlefield {
+  height: 100vh;
+  background-color: #FFF;
+  background-image: url("../../img/misc/background.jpg");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 4px solid #000; }
+  .battlefield .field {
+    display: flex;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; }
+    .battlefield .field--up {
+      border-bottom: 2px solid #222; }
+    .battlefield .field--down {
+      border-top: 2px solid #222; }
+    .battlefield .field--active {
+      background-color: rgba(0, 255, 0, 0.1); }
+
+.hand {
+  display: flex;
+  min-height: 500px;
+  height: auto;
+  padding: 60px 0;
+  margin: auto;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: #444;
+  background-image: url("../../img/misc/background.jpg");
+  background-size: 100vw 100%;
+  background-repeat: no-repeat; }
+
+.damaged {
+  color: #DC342B; }
+
+.upgraded {
+  color: #0F0; }
+
+.stealth {
+  z-index: 1;
+  position: absolute;
+  top: 25.5px;
+  width: 147.75px !important;
+  height: 132.3px !important;
+  opacity: 0.6; }
+
+.guard {
+  z-index: 1;
+  position: absolute;
+  top: 25.5px;
+  width: 147.75px !important;
+  height: 132.3px !important;
+  opacity: 0.2;
+  /*box-shadow: 0 11px 23px 3px #FFF;*/
+  background-image: url("../../img/misc/metal.jpg");
+  background-size: 400% 400%;
+  background-repeat: repeat-y;
+  -webkit-animation: Taunt 30s linear infinite;
+  -moz-animation: Taunt 30s linear infinite;
+  animation: Taunt 30s linear infinite; }
+
+@-webkit-keyframes Taunt {
+  0% {
+    background-position: 0% 0%; }
+  50% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 0% 0%; } }
+@-moz-keyframes Taunt {
+  0% {
+    background-position: 0% 0%; }
+  50% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 0% 0%; } }
+@keyframes Taunt {
+  0% {
+    background-position: 0% 0%; }
+  50% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 0% 0%; } }
+.swift {
+  z-index: 1;
+  position: absolute;
+  top: 25.5px;
+  width: 147.75px !important;
+  height: 132.3px !important;
+  background-image: url("../../img/misc/wind.jpg");
+  background-size: 400% 400%;
+  background-repeat: repeat-x;
+  -webkit-animation: Fury 15s ease infinite;
+  -moz-animation: Fury 15s ease infinite;
+  animation: Fury 15s ease infinite;
+  opacity: 0.3; }
+
+@-webkit-keyframes Fury {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 60%; }
+  100% {
+    background-position: 0% 50%; } }
+@-moz-keyframes Fury {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 75%; }
+  100% {
+    background-position: 0% 50%; } }
+@keyframes Fury {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 75%; }
+  100% {
+    background-position: 0% 50%; } }
+.card {
+  display: flex;
+  height: 500px;
+  width: 275px;
+  flex-flow: column wrap;
+  box-sizing: border-box;
+  padding: 0.7%;
+  background-color: #C0B524;
+  background-image: url("../../img/misc/noise.png");
+  cursor: pointer; }
+  .card .highlight {
+    padding: 0px 5px;
+    border-radius: 5px;
+    color: #FFF;
+    background-color: #000;
+    font-weight: 100; }
+  .card.legendary {
+    background-color: #ABABAB; }
+    .card.legendary .card--stats, .card.legendary .card--header, .card.legendary .card--race {
+      background-color: #8E8E8E; }
+  .card.spell {
+    background-color: #2488C0; }
+    .card.spell .card--stats, .card.spell .card--header, .card.spell .card--race {
+      background-color: #9B2A99; }
+  .card--header {
+    width: 100%;
+    height: 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    box-sizing: border-box;
+    color: #FFF;
+    background-color: #9B2A2A;
+    background-image: url("../../img/misc/noise.png");
+    font-size: 100%; }
+  .card--image {
+    width: 100%;
+    height: 46.8%; }
+    .card--image img {
+      width: 100%;
+      height: 100%; }
+  .card--stats {
+    display: flex;
+    height: 9%;
+    justify-content: space-around;
+    align-items: center;
+    color: #FFF;
+    background-color: #9B2A2A;
+    background-image: url("../../img/misc/noise.png");
+    font-size: 160%; }
+  .card--desc {
+    height: 34%;
+    padding: 7px;
+    box-sizing: border-box;
+    background-color: #FFF;
+    background-image: url("../../img/misc/noise.png");
+    overflow-y: scroll;
+    font-weight: 900;
+    font-size: 90%; }
+    .card--desc::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #F5F5F5; }
+    .card--desc::-webkit-scrollbar {
+      width: 3px; }
+    .card--desc::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #000; }
+    .card--desc p {
+      padding: 5px 5px;
+      border-bottom: 2px solid #000; }
+    .card--desc p:nth-child(2), .card--desc p:nth-child(3) {
+      padding-top: 7px; }
+    .card--desc p:nth-child(3) {
+      border-bottom: 0; }
+  .card--race {
+    display: flex;
+    height: 4.2%;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    background-color: #9B2A2A;
+    background-image: url("../../img/misc/noise.png");
+    font-size: 90%; }
+
+.mute {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  background-color: #555;
+  color: #FFF;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 900;
+  cursor: pointer;
+  background-image: url("../../img/misc/noise.png"); }
+  .mute:hover {
+    background-color: #666; }
+
+/*# sourceMappingURL=style.css.map */
