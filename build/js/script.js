@@ -4,12 +4,12 @@ var cards = {
   /* Goblins */
   goblinranger: {text: "<p><span class='highlight'>On play:</span> deal 1 damage to an enemy minion</p>", name: "Goblin Ranger", mana: 1, attack: 1, brute: 2, health: 3, race: "Goblin"},
   warmonger: {text: "<p><span class='highlight'>On play:</span> If an enemy minion is damaged gain 0/0/+2</p>", name: "Warmonger", mana: 2, attack: 3, brute: 6, health: 1, race: "Goblin"},
-  goblintwins: {text: "<p><span class='highlight'>On play:</span> Summon another 2/3/2 Goblin on the battlefield</p>", name: "Goblin Twins", mana: 3, attack: 2, brute: 3, health: 2, race: "Goblin"},
-  cultmage: {text: "<p><span class='highlight'>On play:</span> Deal 3 damage to a character</p><p><span class='highlight'>Passive:</span> Whenever this minion kills an enemy deal 3 damage to the opponent and gain Spelldamage +2</p>", name: "Cult Mage", mana: 4, attack: 1, brute: 2, health: 6, race: "Goblin"},
-  sewerassassin: {text: "<p><span class='highlight'>On play:</span> If you have atleast 2 other Goblins on the board assassinate an enemy minion</p><p><span class='highlight'>Passive:</span> Whenever this minion kills an enemy deal 3 damage to the opponent</p>", name: "Sewer Assassin", mana: 5, attack: 4, brute: 5, health: 3, race: "Goblin"},
+  goblintwins: {text: "<p><span class='highlight'>On play:</span> Summon a 2/3/2 Goblin Twin on the battlefield</p>", name: "Goblin Twins", mana: 3, attack: 2, brute: 3, health: 2, race: "Goblin"},
+  cultmage: {text: "<p><span class='highlight'>On play:</span> Deal 3 damage to a character</p>"/*<p><span class='highlight'>Passive:</span> Whenever this minion kills an enemy deal 3 damage to the opponent and gain Spelldamage +2</p>"*/, name: "Cult Mage", mana: 4, attack: 1, brute: 2, health: 6, race: "Goblin"},
+  sewerassassin: {text: "<p><span class='highlight'>On play:</span> If you have atleast 2 other Goblins on the board destroy an enemy minion</p><p><span class='highlight'>Passive:</span> Whenever this minion kills an enemy deal 3 damage to the opponent</p>", name: "Sewer Assassin", mana: 5, attack: 4, brute: 5, health: 3, race: "Goblin"},
   goblincharger: {text: "<p><span class='highlight'>Rush</span></p><p>At the end of your turn gain +1/+2/0</p>", name: "Goblin Charger", mana: 6, attack: 5, brute: 7, health: 3, race: "Goblin"},
   crookedservant: {text: "<p><span class='highlight'>Stealth</span></p><p><span class='highlight'>Passive:</span> Whenever this kills an enemy restore 4 health to your hero</p>", name: "Crooked Servant", mana: 7, attack: 7, brute: 10, health: 3, race: "Goblin"},
-  dirtymage: {text: "<p>At the end of your turn deal 4 damage to the opponent</p><p><span class='highlight'>On death:</span> Explode and deal 2 damage to all minions</p><p><span class='highlight'>Passive:</span> Spelldamage +3</p>", name: "Dirty Mage", mana: 8, attack: 2, brute: 4, health: 10, race: "Goblin"},
+  dirtymage: {text: "<p>At the end of your turn deal 4 damage to the opponent</p><p><span class='highlight'>On death:</span> Deal 2 damage to all minions</p><p><span class='highlight'>Passive:</span> Spelldamage +3</p>", name: "Dirty Mage", mana: 8, attack: 2, brute: 4, health: 10, race: "Goblin"},
   giant: {text: "<p><span class='highlight'>On play:</span> If you have atleast 2 other goblins on the board gain Guard</p>", name: "Giant", mana: 9, attack: 9, brute: 12, health: 9, race: "Goblin"},
   goblinprince: {text: "<p><span class='highlight'>On play:</span> All other goblins restore their health</p><p><span class='highlight'>On play:</span> Gain +1/0/0 for each damaged enemy minion</p><p><span class='highlight'>Passive:</span> Your Goblins gain +3/+3/+3</p>", name: "Goblin Prince", mana: 10, attack: 4, brute: 10, health: 4, race: "Goblin", legend: 1},
   kingnilbog: {text: "<p><span class='highlight'>On play:</span> The next minion you play is free</p><p><span class='highlight'>On death:</span> The next spell you cast is free</p>", name: "King Nilbog", mana: 10, attack: 4, brute: 4, health: 10, race: "Goblin", legend: 1},
@@ -28,31 +28,31 @@ var cards = {
   goathead: {text: "<p><span class='highlight'>On death:</span> Deal 3 damage to your hero</p>", name: "Goathead", mana: 1, attack: 2, brute: 2, health: 3, race: "Demon"},
   brutedemon: {text: "<p><span class='highlight'>Passive:</span> Whenever this minion takes damage deal 2 damage to your hero</p>", name: "Brute Demon", mana: 2, attack: 3, brute: 7, health: 3, race: "Demon"},
   fallenknight: {text: "<p><span class='highlight'>Stealth</span></p><p>At the end of your turn deal 1 damage to this minion and restore 1 health to your hero</p>", name: "Fallen Knight", mana: 3, attack: 1, brute: 1, health: 7, race: "Demon"},
-  hellequin: {text: "<p><span class='highlight'>Stealth</span></p><p><span class='highlight'>On play:</span> Gain +2/+2/+2 for each card played this turn</p><p><span class='highlight'>On death:</span> Deal damage equal to this minion's attack to all non-Demon minions</p>", name: "Hellequin", mana: 4, attack: 0, brute: 0, health: 1, race: "Demon"},
+  hellequin: {text: "<p><span class='highlight'>Stealth</span></p><p><span class='highlight'>On play:</span> Gain +2/+2/+2 for each card played this turn</p><p><span class='highlight'>On death:</span> Deal damage equal to this minion's attack to all minions who aren't demons</p>", name: "Hellequin", mana: 4, attack: 1, brute: 1, health: 1, race: "Demon"},
   dusk: {text: "<p><span class='highlight'>Swift</span></p><p>At the end of your turn deal 1 damage to all your other minions who aren't demons", name: "Dusk", mana: 5, attack: 5, brute: 3, health: 5, race: "Demon"},
   fallen: {text: "<p><span class='highlight'>Stealth</span></p><p>At the end of your turn deal 3 damage to both players</p>", name: "Fallen", mana: 6, attack: 7, brute: 7, health: 6, race: "Demon"},
   inquisitor: {text: "<p><span class='highlight'>Stealth</span></p><p><span class='highlight'>Passive:</span> Spells cost health instead of mana</p><p><span class='highlight'>Passive:</span> Spelldamage +3</p>", name: "Inquisitor", mana: 7, attack: 8, brute: 2, health: 2, race: "Demon"},
   demonknight: {text: "<p><span class='highlight'>On play:</span> Deal 3 damage to all other minions who aren't demons</p><p><span class='highlight'>On death:</span> Deal 7 damage to your hero</p>", name: "Demon Knight", mana: 8, attack: 7, brute: 8, health: 7, race: "Demon"},
   bellakor: {text: "<p><span class='highlight'>On play:</span> Deal 5 damage to a minion, if it dies gain +3/+3/+3</p><p><span class='highlight'>On death:</span> Destroy all your other minions who aren't demons</p>", name: "Bel Lakor", mana: 9, attack: 6, brute: 6, health: 6, race: "Demon"},
-  doom: {text: "<p><span class='highlight'>On death:</span> Destroy all minions, restore 1 health to your hero for each minion destroyed</p><p><span class='highlight'>Passive:</span> All your Demons gain +2/+2/+2</p>", name: "Doom", mana: 10, attack: 6, brute: 6, health: 6, race: "Demon", legend: 1},
+  doom: {text: "<p><span class='highlight'>On death:</span> Destroy all minions and restore 1 health to your hero for each other minion destroyed by this effect</p><p><span class='highlight'>Passive:</span> All your Demons gain +2/+2/+2</p>", name: "Doom", mana: 10, attack: 6, brute: 6, health: 6, race: "Demon", legend: 1},
   /* Druids */
   themire: {text: "<p><span class='highlight'>Guard</span></p>", name: "The Mire", mana: 1, attack: 1, brute: 1, health: 4, race: "Druid"},
-  youngmarshsnake: {text: "<p><span class='highlight'>Passive:</span> Destroy any minion that got damaged by this</p>", name: "Marsh Snake", mana: 2, attack: 1, brute: 1, health: 4, race: "Druid"},
+  marshsnake: {text: "<p><span class='highlight'>Passive:</span> Destroy any minion that got damaged by this</p>", name: "Marsh Snake", mana: 2, attack: 1, brute: 1, health: 4, race: "Druid"},
   healingelf: {text: "<p><span class='highlight'>On play:</span> Restore 4 health to your hero</p><p><span class='highlight'>On death:</span> Restore 2 health to all friendly minions</p>", name: "Healing Elf", mana: 3, attack: 2, brute: 1, health: 4, race: "Druid"},
   vorstclaw: {text: "<p><span class='highlight'>Passive:</span> Whenever this minion kills an enemy restore 5 health to your hero</p>", name: "Vorstclaw", mana: 4, attack: 4, brute: 1, health: 4, race: "Druid"},
-  junglemage: {text: "<p><span class='highlight'>On death:</span> Give all Druid minions 0/0/+3</p><p>At the end of your turn restore 2 health to all friendly minions</p>", name: "Jungle Mage", mana: 5, attack: 2, brute: 2, health: 6, race: "Druid"},
+  junglemage: {text: "<p><span class='highlight'>On death:</span> All friendly Druid minions gain 0/0/+3</p><p>At the end of your turn restore 2 health to all friendly minions</p>", name: "Jungle Mage", mana: 5, attack: 2, brute: 2, health: 6, race: "Druid"},
   kurnou: {text: "<p><span class='highlight'>Rush</span></p><p><span class='highlight'>Passive:</span> All Druid minions gain rush</p>", name: "Kurnou", mana: 6, attack: 7, brute: 0, health: 5, race: "Druid"},
   voodoodoctor: {text: "<p><span class='highlight'>On play:</span> Add a Voodoo spell to your hand</p><p><span class='highlight'>Passive:</span> Whenever the opponent gets damaged restore 2 health to your hero</p>", name: "Voodoo Doctor", mana: 7, attack: 2, brute: 1, health: 8, race: "Druid"},
   treantprotector: {text: "<p><span class='highlight'>Guard</span></p><p><span class='highlight'>Passive:</span> Whenever this minion takes damage restore 2 health to your hero</p>", name: "Treant Protector", mana: 8, attack: 6, brute: 3, health: 10, race: "Druid"},
   basilisk: {text: "<p><span class='highlight'>Passive:</span> Whenever a minion gets healed deal 2 damage to all enemy minions</p><p><span class='highlight'>On death:</span> Restore all minions to full health</p>", name: "Basilisk", mana: 9, attack: 8, brute: 9, health: 8, race: "Druid"},
-  colosuss: {text: "<p><span class='highlight'>On play:</span> Restore health of all friendly minions</p><p><span class='highlight'>Passive:</span> Your hero is immune to damage</p>", name: "Colosuss", mana: 10, attack: 12, brute: 0, health: 12, race: "Druid", legend: 1},
+  colosuss: {text: "<p><span class='highlight'>On play:</span> Restore health of all friendly minions to full</p><p><span class='highlight'>Passive:</span> Your hero is immune to damage</p>", name: "Colosuss", mana: 10, attack: 12, brute: 0, health: 12, race: "Druid", legend: 1},
   /*Spells */
-  invasion: {text: "<p><span class='highlight'>Effect:</span> Fill your entire board with 2/3/2 Goblins</p>", name: "Invasion", mana: 7, race: "Spell"},
+  /*invasion: {text: "<p><span class='highlight'>Effect:</span> Fill your entire board with 2/3/2 Goblins</p>", name: "Invasion", mana: 7, race: "Spell"},
   silentdeath: {text: "<p><span class='highlight'>Target:</span> Enemy minion</p><p><span class='highlight'>Effect:</span> Destroy an enemy minion</p>", name: "Silent Death", mana: 5, race: "Spell"},
   voodoo: {text: "<p><span class='highlight'>Target:</span> Friendly minion</p><p><span class='highlight'>Effect:</span> Whenever this minion loses health deal that much back to the opponent</p>", name: "Voodoo", mana: 3, race: "Spell"},
   playingwithfire: {text: "<p><span class='highlight'>Target:</span> Friendly minion</p><p><span class='highlight'>Effect:</span> If at the start of your next turn the friendly minion still lives deal 5 damage to all enemy minions. If this is not the case deal 5 damage to all of your own minions</p>", name: "Playing With Fire", mana: 6, race: "Spell"},
   manacrystal: {text: "<p><span class='highlight'>Effect:</span> Gain 1 extra Mana crystal this turn</p>", name: "Mana Crystal", mana: 0, race: "Spell"}
-};
+*/};
 var players = [
   {
     deck: [],
@@ -79,6 +79,10 @@ var targetAble = "any";
 var shooter = {};
 var races = [];
 var wait = 0;
+var cardsPlayed = 0;
+var minionsKilled = 0;
+var sound = 0;
+var hovering = -1;
 
 /* ============ SETUP ============ */
 function interval(dly){
@@ -131,10 +135,25 @@ document.body.addEventListener("load", first());
 function updateMouse(e){
   if(document.getElementsByClassName("crosshair")[0]){
     let cross = document.getElementsByClassName("crosshair")[0];
+    let found = 0;
 
     cross.style.top = e.pageY+"px";
     cross.style.left = e.pageX+"px";
     document.body.style.cursor = "none";
+
+    if(targetAble == "enemy_minion"){
+      for(let key in battlefield){
+        if(battlefield[key]["field"] == (turn%2)){
+          found = 1;
+        }
+      }
+
+      if(!found){
+        targetAble = "any";
+        cross.remove();
+        document.body.style.cursor = "auto";
+      }
+    }
   }
 }
 
@@ -144,13 +163,17 @@ document.addEventListener("mousemove", updateMouse);
 function startGame(){
   game = 1;
 
-  document.body.innerHTML = `
-  <audio>
-    <source src="" type="audio/ogg">
-  </audio>
-  <audio>
-    <source src="" type="audio/ogg">
-  </audio>
+  document.body.innerHTML = ``;
+
+  for(let i = 0; i <= 8; i++){
+    document.body.innerHTML = document.body.innerHTML + `
+    <audio>
+      <source src="" type="audio/ogg">
+    </audio>
+    `;
+  }
+
+  document.body.innerHTML = document.body.innerHTML + `
   <div class="battlefield">
     <div class="field field--up"></div>
     <div class="player-health player-health--player2" onmouseover="hover('player-health--player2')" onmouseleave="mouseLeft('player-health--player2')" onclick="selectPlayer('2')">50</div>
@@ -164,13 +187,15 @@ function startGame(){
   <div class="mute" onclick="muteMusic()">MUTE MUSIC</div>
   `;
 
-  //playMusic();
+  playMusic();
+  playDrawSound();
   endTurn();
-  drawCard("goblintwins");
-  drawCard("lionheartwarrior");
-  drawCard("goblincharger");
-  drawCard("demonknight");
+  drawCard(2);
+  /*drawCard("goblintwins");
+  drawCard("sewerassassin");
   drawCard("bellakor");
+  drawCard("doom");
+  drawCard("marshsnake");*/
 }
 
 /* ============ PLAY A RANDOM SONG FROM LIBRARY ============ */
@@ -178,9 +203,9 @@ function playMusic(){
   if(!mute){
     let randInt = Math.round(Math.random()*8);
     window.setTimeout(playMusic, songDuration[randInt]*1000);
-    document.getElementsByTagName("source")[1].src = "sounds/music/"+randInt+".ogg";
-    document.getElementsByTagName("audio")[1].load();
-    document.getElementsByTagName("audio")[1].play();
+    document.getElementsByTagName("source")[0].src = "sounds/music/"+randInt+".ogg";
+    document.getElementsByTagName("audio")[0].load();
+    document.getElementsByTagName("audio")[0].play();
   }
 }
 
@@ -190,11 +215,11 @@ function muteMusic(){
 
   if(mute){
     document.getElementsByClassName("mute")[0].innerHTML = `PLAY MUSIC`;
-    document.getElementsByTagName("audio")[1].pause();
+    document.getElementsByTagName("audio")[0].pause();
   }
   else{
     document.getElementsByClassName("mute")[0].innerHTML = `MUTE MUSIC`;
-    document.getElementsByTagName("audio")[1].play();
+    document.getElementsByTagName("audio")[0].play();
   }
 }
 
@@ -247,7 +272,12 @@ function createCard(cardName, place, summoned, summName, summCost, summArt, summ
       <div class="brute">${(summStats ? summStats[1] : cards[cardName]["brute"])}</div>
       <div class="health">${(summStats ? summStats[2] : cards[cardName]["health"])}</div>
     </div>`
-    ) : "")+`
+    ) : `
+    <div class="card--stats">
+      <div class="attack">${(summStats ? summStats[0] : cards[cardName]["attack"])}</div>
+      <div class="brute">${(summStats ? summStats[1] : cards[cardName]["brute"])}</div>
+      <div class="health">${(summStats ? summStats[2] : cards[cardName]["health"])}</div>
+    </div>`)+`
     <div class="card--desc">
       ${(summoned ? "" : cards[cardName]["text"])}
     </div>
@@ -289,6 +319,11 @@ function hover(id){
       if(typeof id === "string"){
         curCard.style.transform = "scale(0.9) translate(-50%, -50%)";
       }
+
+      if(hovering != id){
+        hovering = id;
+        playHoverSound();
+      }
     }
   }
 }
@@ -304,6 +339,10 @@ function mouseLeft(id){
     if(typeof id === "string"){
       curCard.style.transform = "scale(1) translate(-50%, -50%)";
     }
+
+    if(hovering == id){
+      hovering = -1;
+    }
   }
 }
 
@@ -313,6 +352,8 @@ function clicked(id){
   let cardName = curCard.classList[1];
   let field = ((1+turn)%2 == 0 ? document.getElementsByClassName("field--down")[0] : document.getElementsByClassName("field--up")[0]);
   let playID = (turn+1)%2;
+
+  playLandSound();
 
   battlefield[id] = {"name": cardName, "maxattack": cards[cardName]["attack"], "maxbrute": cards[cardName]["brute"], "maxhealth": cards[cardName]["health"], "field": (1+turn)%2, "scale": 1};
 
@@ -344,6 +385,7 @@ function endTurn(){
     let id = turn%2;
 
     turn++;
+    cardsPlayed = 0;
     document.getElementsByClassName("hand")[0].innerHTML = "";
 
     for(let key in battlefield){
@@ -372,6 +414,16 @@ function endTurn(){
               runAction(key, i);
             }
           break
+          case "player_turn_start":
+            if(battlefield[key]["field"] == ((turn+1)%2)){
+              runAction(key, i);
+            }
+          break;
+          case "enemy_turn_start":
+            if(battlefield[key]["field"] == (turn%2)){
+              runAction(key, i);
+            }
+          break;
         }
       }
     }
@@ -428,18 +480,21 @@ function endTurn(){
     }
 
     drawCard(1);
+    playDrawSound()
+    playTurnSound()
   }
 }
 
 /* ============ WHERE THE MAGIC HAPPENS ============ */
 
 function activateCard(cardName, id){
-  /*document.getElementsByTagName("source")[0].src = "sounds/minions/"+cardName+"/"+cardName+"_play.ogg";
-  document.getElementsByTagName("audio")[0].load();
-  document.getElementsByTagName("audio")[0].play();*/
-
   let desc = "";
   let ignore = 0;
+
+  playSummonSound(cardName);
+
+  cardsPlayed++;
+  minionsKilled = 0;
 
   /* GET DESCRIPTION WITHOUT HTML TAGS */
   for(let i = 0; i < cards[cardName]["text"].length; i++){
@@ -564,7 +619,7 @@ function activateCard(cardName, id){
       battlefield[id][section]["trigger"] = "passive";
     }
 
-    /* CHECKING FOR CONDITIONS */
+    /* CHECKING 'IF' CONDITIONS */
     if(desc[i] == "if"){
       for(let u = i; u < desc.length; u++){
         if(desc[u] == "*" || u == (desc.length-1)){
@@ -594,16 +649,45 @@ function activateCard(cardName, id){
           battlefield[id][section]["condition_target"] = "enemy_"+races[races.indexOf(desc[i+2])];
         }
       }
+      // If you have
+      else if(desc[i+1] == "you" && desc[i+2] == "have"){
+        battlefield[id][section]["condition"] = "player_has";
+        // A race
+        if(races.indexOf(desc[i+5].slice(0, desc[i+5].length-1)) >= 0){
+          console.log("if you have "+Number(desc[i+4])+" of "+desc[i+5]);
+          battlefield[id][section]["condition_followup"] = desc[i+5];
+          battlefield[id][section]["condition_value"] = Number(desc[i+4]);
+        }
+        else if(races.indexOf(desc[i+6].slice(0, desc[i+6].length-1)) >= 0){
+          console.log("if you have "+Number(desc[i+4])+" of "+desc[i+6]);
+          battlefield[id][section]["condition_followup"] = desc[i+6].slice(0, desc[i+6].length-1);
+          battlefield[id][section]["condition_value"] = Number(desc[i+4]);
+          console.log("Set id: "+id+" section: "+section+" to "+Number(desc[i+4]));
+        }
+      }
     }
     else if(desc[i] == "at" && desc[i+1] == "the"){
       // AT THE START OF YOUR TURN
       if(desc[i+2] == "start"){
-        console.log("Trigger: At the start of a turn");
         battlefield[id][section]["trigger"] = "turn_start";
+
+        for(let u = i; u < desc.length; u++){
+          if(desc[u] == "*"){
+            break;
+          }
+
+          if(desc[u] == "your" && desc[u+1] == "turn"){
+            battlefield[id][section]["trigger"] = "player_turn_start";
+            console.log("Trigger: Start of your turn");
+          }
+          else if((desc[u] == "enemy" || desc[u] == "enemy's" || desc[u] == "opponents" || desc[u] == "opponent's") && desc[u+1] == "turn"){
+            battlefield[id][section]["trigger"] = "enemy_turn_start";
+            console.log("Trigger: Start of enemy turn");
+          }
+        }
       }
       // AT THE END OF YOUR TURN
       else if(desc[i+2] == "end"){
-        console.log("Trigger: At the end of your turn");
         battlefield[id][section]["trigger"] = "turn_end";
 
         for(let u = i; u < desc.length; u++){
@@ -643,22 +727,57 @@ function activateCard(cardName, id){
         battlefield[id][section]["value"][actID] = Number(desc[i+1]);
         console.log("Deal "+Number(desc[i+1])+" damage");
       }
+      else{
+        for(let u = i; u < desc.length; u++){
+          if(desc[u] == "equal" && (desc[u+3] == "attack" || desc[u+4] == "attack" || desc[u+5] == "attack")){
+            battlefield[id][section]["value"][actID] = "get_attack_self";
+          }
+        }
+      }
     }
-    else if(desc[i] == "destroy" && (desc[i+1] == "minion" || desc[i+1] == "minions" || desc[i+2] == "minion" || desc[i+2] == "minions" || desc[i+4] == "minion" || desc[i+4] == "minions")){
+    else if(desc[i] == "destroy" && (desc[i+1].slice(0, 6) == "minion" || desc[i+1].slice(0, 7) == "minions" || desc[i+2].slice(0, 6) == "minion" || desc[i+2].slice(0, 7) == "minions" || desc[i+3].slice(0, 6) == "minion" || desc[i+3].slice(0, 7) == "minions" || desc[i+4].slice(0, 6) == "minion" || desc[i+4].slice(0, 7) == "minions")){
       battlefield[id][section]["action"][actID] = "deal_damage";
       battlefield[id][section]["value"][actID] = 999999999999;
       console.log("Destroy");
     }
-    else if(desc[i] == "restore" && (desc[i+1] == "health" || desc[i+2] == "health")){
+    else if(desc[i] == "restore"){
       battlefield[id][section]["action"][actID] = "restore_health";
 
-      if(Number(desc[i+1]) > 0){
-        battlefield[id][section]["value"][actID] = Number(desc[i+1]);
-        console.log("Restore "+Number(desc[i+1])+" health");
+      for(let u = i; u < desc.length; u++){
+        if(desc[u] == "full"){
+          battlefield[id][section]["value"][actID] = 999999999999;
+          console.log("Restore to full health");
+          break
+        }
+        else if(Number(desc[u]) > 0){
+          battlefield[id][section]["value"][actID] = Number(desc[u]);
+          console.log("Restore "+Number(desc[u])+" health");
+          break;
+        }
+      }
+
+      for(let u = i; u < desc.length; u++){
+        if(desc[u] == "this"){
+          battlefield[id][section]["target"][actID] = "self";
+          console.log("to this minion");
+          break;
+        }
+        else if(desc[u] == "all" && desc[u+1] == "friendly"){
+          battlefield[id][section]["target"][actID] = "all_friendly";
+          console.log("to all friendly minions");
+          break;
+        }
       }
     }
     else if(desc[i] == "gain"){
-      if(desc[i+1] != "guard"){
+      // Gain a status
+      if(statusList.indexOf(desc[i+1]) >= 0){
+        console.log("gain "+desc[i+1]);
+        battlefield[id][section]["action"][actID] = "gain";
+        battlefield[id][section]["value"][actID] = desc[i+1].toLowerCase();
+      }
+      // Gain Stats
+      else{
         let stats = [];
 
         for(let u = 0; u < desc[i+1].length; u++){
@@ -667,8 +786,13 @@ function activateCard(cardName, id){
           }
         }
 
+        if(!battlefield[id][section]["target"][i]){
+          battlefield[id][section]["target"][actID] = "self";
+        }
+
         battlefield[id][section]["action"][actID] = "gain";
         battlefield[id][section]["value"][actID] = stats;
+        console.log("gain "+stats);
       }
     }
     else if(desc[i] == "summon"){
@@ -691,102 +815,183 @@ function activateCard(cardName, id){
 
       let summ = battlefield[id][section]["summon"][actID];
 
-      summ["name"] = desc[i+3];
+      if(desc[i+4] && desc[i+4] != "on" && desc[i+4] != "*" && desc[i+4].length > 0){
+        summ["name"] = desc[i+3][0].toUpperCase()+desc[i+3].slice(1,desc[i+3].length)+" "+desc[i+4][0].toUpperCase()+desc[i+4].slice(1,desc[i+4].length);
+      }
+      else{
+        summ["name"] = desc[i+3][0].toUpperCase()+desc[i+3].slice(1,desc[i+3].length);
+      }
+
       summ["cost"] = curCard.getElementsByClassName("card--mana")[0].innerText;
       summ["art"] = curCard.getElementsByClassName("card--name")[0].innerText;
       summ["stats"] = stats;
       summ["desc"] = "";
       summ["race"] = curCard.getElementsByClassName("card--race")[0].innerText.slice(0,curCard.getElementsByClassName("card--race")[0].innerText.length-1);
-      console.log("Summ: "+summ);
     }
+    else if(desc[i] == "add"){
+      for(let u = i; u < desc.length; u++){
+        // Add a card to your hand
+        if(desc[u] == "your" && desc[u+1] == "hand"){
+          for(let x = i; x < desc.length; x++){
+            for(let key in cards){
+              if(cards[key]["name"].toLowerCase() == desc[x] || cards[key]["name"].toLowerCase() == desc[x]+" "+desc[x+1]){
+                battlefield[id][section]["target"][i] = "your_hero";
+                battlefield[id][section]["action"][i] = "add_card";
 
-    /* CHECKING FOR TARGET(s) */
-    if(battlefield[id][section]["action"][actID-1]){
-      // Self
-      if(desc[i] == "this" && desc[i+1] == "minion"){
-        console.log("to self");
-        battlefield[id][section]["target"][actID-1] = "self";
-      }
-      // Your Hero
-      else if(desc[i] == "your" && desc[i+1] == "hero"){
-        console.log("to your hero");
-        battlefield[id][section]["target"][actID-1] = "player_hero";
-      }
-      // Choose an enemy minion
-      else if(desc[i] == "enemy" && desc[i+1] == "minion"){
-        console.log("to an enemy minion");
-        battlefield[id][section]["target"][actID-1] = "enemy_minion";
-      }
-      // Choose a minion
-      else if(desc[i] == "a" && (desc[i+1] == "minion" || desc[i+1] == "minion,")){
-        console.log("to a minion");
-        battlefield[id][section]["target"][actID-1] = "a_minion";
-      }
-      // All (other) minions
-      else if((desc[i-1] == "to" || desc[i-1] == "destroy") && desc[i] == "all"){
-        for(let x = i; x < desc.length; x++){
-          if(desc[x] == "*"){
-            break;
-          }
-          // All minions with this race
-          if(races.indexOf(desc[x].slice(0, desc[x].length-1)) >= 0){
-            console.log("to all "+desc[x]+" race cards");
-            battlefield[id][section]["target"][actID-1] = "all_"+desc[x].slice(0, desc[x].length-1);
-            break;
-          }
-          // All other minions with this race
-          else if(desc[x] == "other" && races.indexOf(desc[x+1].slice(0, desc[x+1].length-1)) >= 0){
-            console.log("to all other "+desc[x]+" race cards");
-            battlefield[id][section]["target"][actID-1] = "all_other_"+desc[x].slice(0, desc[x].length-1);
-            break;
-          }
-          // All other minions
-          else if(desc[x] == "other"){
-            let ignore = 0;
-            // All other minions who aren't this race
-            console.log("other");
-            for(let u = x; u < desc.length; u++){
-              if(desc[u-1] == "aren't" && races.indexOf(desc[u].slice(0, desc[u].length-1)) >= 0){
-                console.log("to all other minions who aren't "+desc[u].slice(0, desc[u].length-1)+" race");
-                battlefield[id][section]["target"][actID-1] = "all_other_not_"+desc[u].slice(0, desc[u].length-1);
-                ignore = 1;
-              }
-            }
-
-            if(!ignore){
-              console.log("to all other minions");
-              battlefield[id][section]["target"][actID-1] = "all_other_minions";
-            }
-
-            break;
-          }
-          // All minions
-          else{
-            let ignore = 0;
-            // All minions who aren't this race
-            for(let u = x; u < desc.length; u++){
-              console.log(desc[u-1]+" ---> "+desc[u].slice(0, desc[u].length-1)+" ::: "+desc[x+1]);
-              if(desc[u-1] == "aren't" && races.indexOf(desc[u].slice(0, desc[u].length-1)) >= 0){
-                if(desc[x+1] == "your" || desc[x+2] == "your"){
-                  console.log("to all your minions who aren't "+desc[u].slice(0, desc[u].length-1)+" race");
-                  battlefield[id][section]["target"][actID-1] = "all_your_other_not_"+desc[u].slice(0, desc[u].length-1);
+                if(cards[key]["name"].toLowerCase() == desc[x]){
+                  battlefield[id][section]["value"][i] = desc[x];
+                  console.log("Add "+desc[x]+" to your hand");
                 }
                 else{
-                  console.log("to all minions who aren't "+desc[u].slice(0, desc[u].length-1)+" race");
-                  battlefield[id][section]["target"][actID-1] = "all_other_not_"+desc[u].slice(0, desc[u].length-1);
+                  battlefield[id][section]["value"][i] == desc[x]+desc[x+1]
+                  console.log("Add "+desc[x]+desc[x+1]+" to your hand");
                 }
-
-                ignore = 1;
               }
             }
-
-            if(!ignore){
-              console.log("to all minions");
-              battlefield[id][section]["target"][actID-1] = "all_minions";
-            }
-
-            break;
           }
+        }
+      }
+    }
+
+    /* CHECK 'FOR CONDITION' */
+    if(desc[i] == "for" && desc[i+1] == "each"){
+      for(let u = i; u < desc.length; u++){
+        if(races.indexOf(desc[u]) >= 0){
+          console.log("For each "+desc[u]+" race");
+          battlefield[id][section]["condition"] = "each_race";
+          battlefield[id][section]["condition_race"] = desc[u];
+        }
+        else if(desc[u] == "card" && desc[u+1] == "played"){
+          console.log("For each card played");
+          if(battlefield[id][section]["value"][actID-1]){
+            let val = battlefield[id][section]["value"][actID-1];
+
+            for(let x = 0; x < val.length; x++){
+              val[x] = (val[x] * (cardsPlayed-1));
+              console.log(val[x]);
+            }
+          }
+          else{
+            battlefield[id][section]["value"][actID] = (cardsPlayed-1);
+          }
+        }
+        else if((desc[u] == "minion" && desc[u+1] == "destroyed") || (desc[u] == "dead" && desc[u+1] == "minion") || (desc[u] == "minion" && desc[u+2] == "died")){
+          console.log("For each minion that died");
+          battlefield[id][section]["condition"] = "each_death";
+        }
+      }
+    }
+    /* CHECKING FOR TARGET(s) */
+    // Self
+    if(desc[i] == "this" && desc[i+1] == "minion"){
+      console.log("to self");
+      battlefield[id][section]["target"][actID-1] = "self";
+    }
+    // Your Hero
+    else if(desc[i] == "your" && desc[i+1] == "hero"){
+      console.log("to your hero");
+      battlefield[id][section]["target"][actID-1] = "player_hero";
+    }
+    // Enemy Hero
+    else if((desc[i] == "enemy" && desc[i+1] == "hero") || (desc[i] == "opponent" && desc[i-2] == "to")){
+      console.log("to the enemy hero");
+      battlefield[id][section]["target"][actID-1] = "enemy_hero";
+    }
+    // Both Players
+    else if(desc[i] == "both" && desc[i+1] == "players"){
+      console.log("to both players");
+      battlefield[id][section]["target"][actID-1] = "both_players";
+    }
+    // Choose an enemy minion
+    else if(desc[i] == "enemy" && desc[i+1] == "minion"){
+      console.log("to an enemy minion");
+      battlefield[id][section]["target"][actID-1] = "enemy_minion";
+    }
+    // Choose a minion
+    else if(desc[i] == "a" && (desc[i+1] == "minion" || desc[i+1] == "minion,")){
+      console.log("to a minion");
+      battlefield[id][section]["target"][actID-1] = "a_minion";
+    }
+    // Choose a character
+    else if(desc[i] == "a" && desc[i+1] == "character"){
+      console.log("to a character");
+      battlefield[id][section]["target"][actID-1] = "all";
+    }
+    // All friendly
+    else if(desc[i] == "all" && desc[i+1] == "friendly"){
+      // All friendly race
+      if(races.indexOf(desc[i+2].slice(0, desc[i+2].length-1)) >= 0){
+        console.log("All friendly "+desc[i+2].slice(0, desc[i+2].length-1));
+        battlefield[id][section]["target"][actID] = "all_friendly_race_"+desc[i+2].slice(0, desc[i+2].length-1);
+      }
+      else if(races.indexOf(desc[i+2]) >= 0){
+        console.log("All friendly "+desc[i+2]);
+        battlefield[id][section]["target"][actID] = "all_friendly_race_"+desc[i+2];
+      }
+    }
+    // All (other) minions
+    else if((desc[i-1] == "restore" || (desc[i-1] == "to" || desc[i-1] == "destroy")) && desc[i] == "all" && desc[i+1] != "friendly" && desc[i+1] != "enemy"){
+      for(let x = i; x < desc.length; x++){
+        if(desc[x] == "*"){
+          break;
+        }
+        // All minions with this race
+        if(races.indexOf(desc[x].slice(0, desc[x].length-1)) >= 0){
+          console.log("to all "+desc[x]+" race cards");
+          battlefield[id][section]["target"][actID-1] = "all_"+desc[x].slice(0, desc[x].length-1);
+          break;
+        }
+        // All other minions with this race
+        else if(desc[x] == "other" && races.indexOf(desc[x+1].slice(0, desc[x+1].length-1)) >= 0){
+          console.log("to all other "+desc[x]+" race cards");
+          battlefield[id][section]["target"][actID-1] = "all_other_"+desc[x].slice(0, desc[x].length-1);
+          break;
+        }
+        // All other minions
+        else if(desc[x] == "other"){
+          let ignore = 0;
+          // All other minions who aren't this race
+          console.log("other");
+          for(let u = x; u < desc.length; u++){
+            if(desc[u-1] == "aren't" && races.indexOf(desc[u].slice(0, desc[u].length-1)) >= 0){
+              console.log("to all other minions who aren't "+desc[u].slice(0, desc[u].length-1)+" race");
+              battlefield[id][section]["target"][actID-1] = "all_other_not_"+desc[u].slice(0, desc[u].length-1);
+              ignore = 1;
+            }
+          }
+
+          if(!ignore){
+            console.log("to all other minions");
+            battlefield[id][section]["target"][actID-1] = "all_other_minions";
+          }
+
+          break;
+        }
+        // All minions
+        else{
+          let ignore = 0;
+          // All minions who aren't this race
+          for(let u = x; u < desc.length; u++){
+            if(desc[u-1] == "aren't" && races.indexOf(desc[u].slice(0, desc[u].length-1)) >= 0){
+              if(desc[x+1] == "your" || desc[x+2] == "your"){
+                console.log("to all your minions who aren't "+desc[u].slice(0, desc[u].length-1)+" race");
+                battlefield[id][section]["target"][actID-1] = "all_your_other_not_"+desc[u].slice(0, desc[u].length-1);
+              }
+              else{
+                console.log("to all minions who aren't "+desc[u].slice(0, desc[u].length-1)+" race");
+                battlefield[id][section]["target"][actID-1] = "all_other_not_"+desc[u].slice(0, desc[u].length-1);
+              }
+
+              ignore = 1;
+            }
+          }
+
+          if(!ignore){
+            console.log("to all minions");
+            battlefield[id][section]["target"][actID-1] = "all_minions";
+          }
+
+          break;
         }
       }
     }
@@ -814,6 +1019,42 @@ function activateCard(cardName, id){
             break;
             case "minion_dies":
               runAction(id, i);
+            break;
+            case "player_has":
+              if(races.indexOf(battlefield[id][i]["condition_followup"]) >= 0 && battlefield[id][i]["condition_value"]){
+                let exist = 0;
+
+                for(let key in battlefield){
+                  let getRace = document.getElementsByClassName(key)[0].getElementsByClassName("card--race")[0].innerText.toLowerCase();
+                  getRace = getRace.slice(0, getRace.length-1);
+                  
+                  if(battlefield[key]["field"] == battlefield[id]["field"] && key != id && getRace == battlefield[id][i]["condition_followup"]){
+                    exist++
+                  }
+                }
+
+                if(exist >= battlefield[id][i]["condition_value"]){
+                  runAction(id, i);
+                  console.log("Run Action");
+                }
+              }
+            break
+            case "each_race":
+              for(let key in battlefield){
+                let count = 0;
+                let getRace = document.getElementsByClassName(key)[0].getElementsByClassName("card--race")[0].innerText;
+                getRace = getRace.slice(0, getRace.length-1).toLowerCase();
+                console.log(getRace);
+
+                if(getRace == battlefield[id][i]["condition_race"] && id != key){
+                  count++;
+                }
+
+                if(count > 0){
+                  battlefield[id][i]["condition_value"] = count;
+                  runAction(id, i);
+                }
+              }
             break;
           }
 
@@ -891,6 +1132,7 @@ function selectCard(id){
     else{
       targetAble = "any";
       effectDamage(id, shooter["damage"]);
+      playAttackSound(getCardName(shooter["id"]));
       document.getElementsByClassName("crosshair")[0].remove();
       document.body.style.cursor = "auto";
     }
@@ -900,141 +1142,248 @@ function selectCard(id){
 function runAction(id, section){
   // DEAL DAMAGE
   let stop = 0
+  let cardName = getCardName(id);
 
-  for(let i = 0; i < battlefield[id][section]["action"].length; i++){
-    if(!stop){
-      console.log("Run action "+i);
-      console.log(battlefield[id][section]["target"][i]);
-      let found = 0;
-      let value = battlefield[id][section]["value"][i];
+  minionsKilled = 0;
 
-      switch(battlefield[id][section]["action"][i]){
-        case "deal_damage":
-          switch(battlefield[id][section]["target"][i]){
-            case "self":
-              effectDamage(id, value);
-            break;
-            case "player_hero":
-              damagePlayer(battlefield[id]["field"]+1, value);
-            break;
-            case "enemy_minion":
-              wait = 0;
+  if(battlefield[id] && battlefield[id][section] && battlefield[id][section]["action"]){
+    for(let i = 0; i < battlefield[id][section]["action"].length; i++){
+      if(!stop){
+        console.log("Run action "+i);
+        console.log(battlefield[id][section]["target"][i]);
+        let found = 0;
+        let value = battlefield[id][section]["value"][i];
 
-              for(let key in battlefield){
-                if(battlefield[key]["field"] == (turn%2)){
-                  found = 1;
-                  console.log("Found 1! "+key);
-                }
-              }
+        if(value == "get_attack_self"){
+          value = Number(document.getElementsByClassName(id)[0].getElementsByClassName("attack")[0].innerText);
+        }
 
-              if(found && battlefield[id]["field"] == ((turn+1)%2)){
-                console.log("Get crosshair ready");
-                targetAble = "enemy_minion";
+        switch(battlefield[id][section]["action"][i]){
+          case "deal_damage":
+            switch(battlefield[id][section]["target"][i]){
+              case "self":
+                effectDamage(id, value);
+              break;
+              case "all":
+                wait = 0;
+
+                targetAble = "all";
                 shooter = {"id": id, "damage": value};
                 document.body.innerHTML = document.body.innerHTML + `
                 <div class="crosshair"></div>
                 `;
-              }
-            break
-            case "a_minion":
-              wait = 0;
+              break;
+              case "player_hero":
+                damagePlayer(1+battlefield[id]["field"], value);
+              break;
+              case "enemy_hero":
+                damagePlayer(2-battlefield[id]["field"], value);
+              break;
+              case "both_players":
+                damagePlayer(1+battlefield[id]["field"], value);
+                damagePlayer(2-battlefield[id]["field"], value);
+              break;
+              case "enemy_minion":
+                wait = 0;
 
-              for(let key in battlefield){
-                if(key != id){
-                  found = 1;
-                }
-              }
-
-              if(found){
-                targetAble = "a_minion";
-                shooter = {"id": id, "damage": value};
-                document.body.innerHTML = document.body.innerHTML + `
-                <div class="crosshair"></div>
-                `;
-              }
-            break;
-            default:
-              let act = "";
-
-              if(battlefield[id] && battlefield[id][section]["target"][i]){
-                act = battlefield[id][section]["target"][i];
-              }
-
-              if(act.slice(0, 14) == "all_other_not_" && races.indexOf(act.slice(14, act.length)) >= 0){
                 for(let key in battlefield){
-                  let curCard = document.getElementsByClassName(key)[0];
-                  let getRace = curCard.getElementsByClassName("card--race")[0].innerText.toLowerCase();
-                  getRace = getRace.slice(0, getRace.length-1);
-                  
-                  if(key != id && getRace != act.slice(14, act.length)){
-                    effectDamage(key, value);
+                  if(battlefield[key]["field"] == (turn%2)){
+                    found = 1;
                   }
                 }
-              }
-              else if(act.slice(0, 19) == "all_your_other_not_" && races.indexOf(act.slice(19, act.length)) >= 0){
-                for(let key in battlefield){
-                  let curCard = document.getElementsByClassName(key)[0];
-                  let getRace = curCard.getElementsByClassName("card--race")[0].innerText.toLowerCase();
-                  let fieldSide;
 
-                  for(let key2 in battlefield){
-                    if(key2 == id){
-                      fieldSide = battlefield[key2]["field"];
-                      break;
+                if(found && battlefield[id]["field"] == ((turn+1)%2)){
+                  console.log("Get crosshair ready");
+                  targetAble = "enemy_minion";
+                  shooter = {"id": id, "damage": value};
+                  document.body.innerHTML = document.body.innerHTML + `
+                  <div class="crosshair"></div>
+                  `;
+                }
+
+                playSummonSound(cardName)
+              break
+              case "all_minions":
+                for(let key in battlefield){
+                  effectDamage(key, value);
+                }
+
+                if(battlefield[id][section]["condition"] == "each_death"){
+                  battlefield[id][section]["value"][i+1] = battlefield[id][section]["value"][i+1] * (minionsKilled-1);
+                  console.log("Killed "+minionsKilled+" minions value: "+battlefield[id][section]["value"][i+1]);
+                }
+              break;
+              case "a_minion":
+                wait = 0;
+
+                for(let key in battlefield){
+                  if(key != id){
+                    found = 1;
+                  }
+                }
+
+                if(found){
+                  targetAble = "a_minion";
+                  shooter = {"id": id, "damage": value};
+                  document.body.innerHTML = document.body.innerHTML + `
+                  <div class="crosshair"></div>
+                  `;
+                }
+
+                playSummonSound(cardName);
+              break;
+              default:
+                let act = "";
+
+                if(battlefield[id] && battlefield[id][section]["target"][i]){
+                  act = battlefield[id][section]["target"][i];
+                }
+
+                if(act.slice(0, 14) == "all_other_not_" && races.indexOf(act.slice(14, act.length)) >= 0){
+                  for(let key in battlefield){
+                    let curCard = document.getElementsByClassName(key)[0];
+                    let getRace = curCard.getElementsByClassName("card--race")[0].innerText.toLowerCase();
+                    getRace = getRace.slice(0, getRace.length-1);
+                    
+                    if(key != id && getRace != act.slice(14, act.length)){
+                      effectDamage(key, value);
                     }
                   }
+                }
+                else if(act.slice(0, 19) == "all_your_other_not_" && races.indexOf(act.slice(19, act.length)) >= 0){
+                  for(let key in battlefield){
+                    let curCard = document.getElementsByClassName(key)[0];
+                    let getRace = curCard.getElementsByClassName("card--race")[0].innerText.toLowerCase();
+                    let fieldSide;
 
-                  getRace = getRace.slice(0, getRace.length-1);
+                    for(let key2 in battlefield){
+                      if(key2 == id){
+                        fieldSide = battlefield[key2]["field"];
+                        break;
+                      }
+                    }
 
-                  if(key != id && getRace != act.slice(19, act.length) && battlefield[key]["field"] == fieldSide){
-                    effectDamage(key, value);
+                    getRace = getRace.slice(0, getRace.length-1);
+
+                    if(key != id && getRace != act.slice(19, act.length) && battlefield[key]["field"] == fieldSide){
+                      effectDamage(key, value);
+                    }
                   }
                 }
-              }
-          }
+            }
 
-          if(battlefield[id][section]["condition"] == "minion_dies"){
-            stop = 1;
-            battlefield[id][section]["action"].splice(0, (i+1))
-            battlefield[id][section]["value"].splice(0, (i+1))
-            battlefield[id]["waiting_for_kill"] = 1;
-          }
-        break;
-        case "restore_health":
-          switch(battlefield[id][section]["target"][i]){
-            case "player_hero":
-              restoreHealth("player-health--player"+(battlefield[id]["field"]+1), battlefield[id][section]["value"][i]);
-            break;
-          }
-        break
-        case "gain":
-          switch(battlefield[id][section]["target"][i]){
-            case "":
-              
-            break
-            default:
-              gainStats(id, battlefield[id][section]["value"][i]);
-          }
-        break;
-        case "summon_minion":
-          let field = (battlefield[id]["field"] == 0 ? "field--down" : "field--up");
-          let summ = battlefield[id][section]["summon"][i];
+            if(battlefield[id]["waiting_for_kill"]){
+              battlefield[id]["waiting_for_kill"] = 0;
+            }
+            else if(battlefield[id][section]["condition"] == "minion_dies" && document.getElementsByClassName("crosshair")[0]){
+              battlefield[id][section]["action"].splice(0, (i+1))
+              battlefield[id][section]["value"].splice(0, (i+1))
+              battlefield[id]["waiting_for_kill"] = 1;
 
-          createCard(summ["art"], field, 1, summ["name"], summ["cost"], summ["art"], summ["stats"], summ["desc"], summ["race"]);
-        break;
+              console.log("Waiting for kill");
+            }
+
+            if(battlefield[id][section]["condition"] == "minion_dies"){
+              stop = 1;
+            }
+          break;
+          case "restore_health":
+            switch(battlefield[id][section]["target"][i]){
+              case "player_hero":
+                restoreHealth("player-health--player"+(battlefield[id]["field"]+1), battlefield[id][section]["value"][i]);
+              break;
+              case "all_friendly":
+                for(let key in battlefield){
+                  if(battlefield[key]["field"] == battlefield[id]["field"]){
+                    restoreHealth(key, battlefield[id][section]["value"][i]);
+                  }
+                }
+              break;
+              case "all_minions":
+                for(let key in battlefield){
+                  restoreHealth(key, battlefield[id][section]["value"][i]);
+                }
+              break
+              case "self":
+                restoreHealth(id, battlefield[id][section]["value"][i]);
+              break;
+            }
+          break
+          case "gain":
+            switch(battlefield[id][section]["value"][i]){
+              case "guard":
+                let image = document.getElementsByClassName(id)[0].getElementsByClassName("card--image")[0];
+
+                image.innerHTML = image.innerHTML + `
+                <div class="guard"></div>
+                `;
+
+                battlefield[id]["guard"] = 1;
+
+                for(let key in battlefield){
+                  if(battlefield[key]["field"] == battlefield[id]["field"] && !battlefield[key]["guard"]){
+                    battlefield[key]["scale"] = 0.75;
+                    document.getElementsByClassName(key)[0].style.transform = "scale(0.75)";
+                  }
+                }
+
+                hover(id);
+                mouseLeft(id);
+              break
+              case "rush":
+                battlefield[id]["canAttack"] = 1;
+                battlefield[id]["rush"] = 1;
+                document.getElementsByClassName(id)[0].style.boxShadow = "0px 0px 20px 3px #0C0";
+              break;
+              default:
+                console.log("section: "+section+" i: "+i+" : "+battlefield[id][section]["target"][i]);
+                if(battlefield[id][section]["target"][i] == "all_friendly"){
+                  for(let key in battlefield){
+                    if(battlefield[key]["field"] == battlefield[id]["field"]){
+                      gainStats(key, battlefield[id][section]["value"][i]);
+                    }
+                  }
+                }
+                else if(battlefield[id][section]["target"][i].slice(0,18) == "all_friendly_race_"){
+                  for(let key in battlefield){
+                    let targRace = battlefield[id][section]["target"][i].slice(18, battlefield[id][section]["target"][i].length).toLowerCase();
+                    let getRace = document.getElementsByClassName(key)[0].getElementsByClassName("card--race")[0].innerText;
+                    getRace = getRace.slice(0, getRace.length-1).toLowerCase();
+                    console.log("targRace "+targRace);
+                    if(targRace == getRace && battlefield[key]["field"] == battlefield[id]["field"]){
+                      gainStats(key, battlefield[id][section]["value"][i]);
+                    }
+                  }
+                }
+                else{
+                  gainStats(id, battlefield[id][section]["value"][i]);
+                }
+            }
+          break;
+          case "summon_minion":
+            let field = (battlefield[id]["field"] == 0 ? "field--down" : "field--up");
+            let summ = battlefield[id][section]["summon"][i];
+
+            createCard(summ["art"], field, 1, summ["name"], summ["cost"], summ["art"], summ["stats"], summ["desc"], summ["race"]);
+          break;
+          case "add_card":
+            if(battlefield[id][section]["target"][i] == "your_hero"){
+              createCard(battlefield[id][section]["value"][i], "hand");
+            }
+          break;
+        }
       }
     }
-  }
 
-  if(battlefield[id] && battlefield[id][section]["trigger"] == "on_death"){
-    console.log("Removed card "+id+" (on death)");
-    document.getElementsByClassName(id)[0].remove();
-    delete battlefield[id];
+    if(battlefield[id] && battlefield[id][section]["trigger"] == "on_death"){
+      console.log("Removed card "+id+" and triggered on_death");
+      document.getElementsByClassName(id)[0].remove();
+      delete battlefield[id];
+    }
   }
 }
 
 function damagePlayer(id, damage){
-  console.log("ID "+id);
   let curHealth = document.getElementsByClassName("player-health--player"+id)[0];
   let health = Number(curHealth.innerHTML) - damage;
   
@@ -1042,38 +1391,47 @@ function damagePlayer(id, damage){
 }
 
 function selectPlayer(id){
-  let ignore = 0;
-  
-  for(let key in battlefield){
-    if(battlefield[key]["field"] == (id-1) && battlefield[key]["guard"]){
-      ignore = 1;
-    }
-  }
-
-  if(!ignore){
+  if(targetAble != "all"){
+    let ignore = 0;
+    
     for(let key in battlefield){
-      if(battlefield[key]["selected"] == 1 && battlefield[key]["field"] != (id-1)){
-        let curCard = document.getElementsByClassName(key)[0];
-
-        damagePlayer(id, Number(curCard.getElementsByClassName("brute")[0].innerHTML));
-        battlefield[key]["selected"] = 0;
-        curCard.style.opacity = 1;
-        curCard.style.transform = "scale(1)";
-
-        if(!battlefield[key]["swift"] || battlefield[key]["attackReset"])
-        {
-          battlefield[key]["canAttack"] = 0;
-          battlefield[key]["attackReset"] = 0;
-          curCard.style.boxShadow = "none";
-        }
-        else{
-          battlefield[key]["attackReset"] = 1;
-        }
-
-        scale(key, 1);
-        removeStealth(key);
+      if(battlefield[key]["field"] == (id-1) && battlefield[key]["guard"]){
+        ignore = 1;
       }
     }
+
+    if(!ignore){
+      for(let key in battlefield){
+        if(battlefield[key]["selected"] == 1 && battlefield[key]["field"] != (id-1)){
+          let curCard = document.getElementsByClassName(key)[0];
+
+          playAttackSound(getCardName(key));
+          damagePlayer(id, Number(curCard.getElementsByClassName("brute")[0].innerHTML));
+          battlefield[key]["selected"] = 0;
+          curCard.style.opacity = 1;
+          curCard.style.transform = "scale(1)";
+
+          if(!battlefield[key]["swift"] || battlefield[key]["attackReset"])
+          {
+            battlefield[key]["canAttack"] = 0;
+            battlefield[key]["attackReset"] = 0;
+            curCard.style.boxShadow = "none";
+          }
+          else{
+            battlefield[key]["attackReset"] = 1;
+          }
+
+          scale(key, 1);
+          removeStealth(key);
+        }
+      }
+    }
+  }
+  else{
+    targetAble = "any";
+    damagePlayer(id, shooter["damage"]);
+    document.getElementsByClassName("crosshair")[0].remove();
+    document.body.style.cursor = "auto";
   }
 }
 
@@ -1101,6 +1459,10 @@ function effectDamage(victimID, damage){
 
   if(vicHealth < battlefield[victimID]["maxhealth"]){
     victim.getElementsByClassName("health")[0].classList.add("damaged");
+
+    if(victim.getElementsByClassName("health")[0].getElementsByClassName("upgraded")[0]){
+      victim.getElementsByClassName("health")[0].classList.remove("upgraded");
+    }
   }
   else if(victim.getElementsByClassName("damaged")[0]){
     victim.getElementsByClassName("health")[0].classList.remove("damaged");
@@ -1109,12 +1471,18 @@ function effectDamage(victimID, damage){
   if(vicHealth <= 0){
     for(let key in battlefield){
       if(battlefield[key]["waiting_for_kill"]){
-        battlefield[key]["waiting_for_kill"] = 0;
         runAction(key, 0);
       }
     }
 
+    minionsKilled++;
     removeCard(victimID);
+  }
+
+  for(let key in battlefield){
+    if(battlefield[key]["waiting_for_kill"]){
+      battlefield[key]["waiting_for_kill"] = 0;
+    }
   }
 }
 
@@ -1123,9 +1491,10 @@ function restoreHealth(targetID, amount){
   let health = target.getElementsByClassName("health")[0];
   let targHealth = 0;
 
-  if(target.getElementsByClassName("health")[0]){
+  if(health){
     health.innerHTML = (Number(health.innerHTML) + amount);
     targHealth = Number(health.innerHTML);
+    console.log(targHealth);
   }
   else{
     target.innerHTML = (Number(target.innerHTML) + amount);
@@ -1133,8 +1502,19 @@ function restoreHealth(targetID, amount){
     health = target;
   }
 
-  if(targHealth > 50){
-    health.innerHTML = 50;
+  if(!battlefield[targetID]){
+    if(targHealth > 50){
+      health.innerHTML = 50;
+    }
+  }
+  else{
+    if(targHealth >= battlefield[targetID]["maxhealth"]){
+      health.innerHTML = battlefield[targetID]["maxhealth"];
+
+      if(target.getElementsByClassName("damaged")[0]){
+        target.getElementsByClassName("damaged")[0].classList.remove("damaged");
+      }
+    }
   }
 }
 
@@ -1150,6 +1530,10 @@ function gainStats(targetID, stats){
 
   if(Number(attack.innerHTML) > battlefield[targetID]["maxattack"]){
     attack.classList.add("upgraded");
+
+    if(attack.getElementsByClassName("damaged")[0]){
+      attack.classList.remove("damaged");
+    }
   }
   else if(attack.getElementsByClassName("upgraded")[0]){
     attack.classList.remove("upgraded");
@@ -1157,6 +1541,10 @@ function gainStats(targetID, stats){
 
   if(Number(brute.innerHTML) > battlefield[targetID]["maxbrute"]){
     brute.classList.add("upgraded");
+
+    if(brute.getElementsByClassName("damaged")[0]){
+      brute.classList.remove("damaged");
+    }
   }
   else if(brute.getElementsByClassName("upgraded")[0]){
     brute.classList.remove("upgraded");
@@ -1164,6 +1552,10 @@ function gainStats(targetID, stats){
 
   if(Number(health.innerHTML) > battlefield[targetID]["maxhealth"]){
     health.classList.add("upgraded");
+
+    if(health.getElementsByClassName("damaged")[0]){
+      health.classList.remove("damaged");
+    }
   }
   else if(health.getElementsByClassName("upgraded")[0]){
     health.classList.remove("upgraded");
@@ -1179,6 +1571,8 @@ function damage(attackID, victimID){
   let damageAttack = Number(victim.getElementsByClassName("attack")[0].innerHTML);
   let ignore = 0;
 
+  playAttackSound(getCardName(attackID));
+
   console.log(victim.classList[1]+" took "+damageVictim+" damage and "+attacker.classList[1]+" took "+damageAttack+" damage");
   
   if((healthVictim - damageVictim) <= 0){
@@ -1189,13 +1583,18 @@ function damage(attackID, victimID){
   }
 
   healthVictim = Number(victim.getElementsByClassName("health")[0].innerHTML);
+  let health = victim.getElementsByClassName("health")[0];
 
   if(battlefield[victimID]){
     if(healthVictim < battlefield[victimID]["maxhealth"]){
-      victim.getElementsByClassName("health")[0].classList.add("damaged");
+      health.classList.add("damaged");
+
+      if(health.getElementsByClassName("upgraded")[0]){
+        health.classList.remove("upgraded");
+      }
     }
-    else if(victim.getElementsByClassName("damaged")[0]){
-      victim.getElementsByClassName("health")[0].classList.remove("damaged");
+    else if(health.getElementsByClassName("damaged")[0]){
+      health.classList.remove("damaged");
     }
   }
 
@@ -1250,9 +1649,12 @@ function scale(id, size){
 }
 
 function removeCard(id){
-  console.log("Remove card "+id);
   let victim = document.getElementsByClassName(id)[0];
+  let holder = "";
   let ignore = 0;
+
+  playDeathSound(getCardName(id));
+  console.log("Remove card "+id);
 
   victim.getElementsByClassName("health")[0].innerHTML = 0;
   victim.style.transition = "1s";
@@ -1265,13 +1667,13 @@ function removeCard(id){
         ignore = 1;
       }
     }
-  }
 
-  if(!ignore){
-    for(let key in battlefield){
-      if(battlefield[key]["field"] == battlefield[id]["field"]){
-        battlefield[key]["scale"] = 1;
-        scale(key, 1);
+    if(!ignore){
+      for(let key in battlefield){
+        if(battlefield[key]["field"] == battlefield[id]["field"]){
+          battlefield[key]["scale"] = 1;
+          scale(key, 1);
+        }
       }
     }
   }
@@ -1279,15 +1681,19 @@ function removeCard(id){
   let ran = 0;
   let count = battlefield[id]["sections"];
 
+  wait = 1;
+
+  window.setTimeout(function(){
+    wait = 0;
+  }, 750);
+
   if(battlefield[id] && count){
     for(let i = 0; i < count; i++){
       if(battlefield[id][i]["trigger"] == "on_death"){
         ran = 1;
-        wait = 1;
 
         window.setTimeout(function(){
           runAction(id, i);
-          wait = 0;
         }, 751);
       }
     }
@@ -1305,11 +1711,11 @@ function removeCard(id){
 
 function canBeTargeted(id){
   if(document.getElementsByClassName(id)[0].classList[0] == "card"){
-    if(targetAble == "any" || targetAble == "a_minion" || battlefield[id]){
+    if(targetAble == "any" || targetAble == "a_minion" || targetAble == "all" || battlefield[id]){
       if(battlefield[id] && battlefield[id]["stealth"] && battlefield[id]["field"] == (turn%2)){
         return false;
       }
-      else if(targetAble == "any" || (targetAble == "a_minion" && id != shooter["id"]) || (targetAble == "enemy_minion" && battlefield[id]["field"] == (turn%2)) || (targetAble == "friendly_minion" && battlefield[id]["field"] == ((turn+1)%2))){
+      else if(targetAble == "any" || targetAble == "all" || (targetAble == "a_minion" && id != shooter["id"]) || (targetAble == "enemy_minion" && battlefield[id]["field"] == (turn%2)) || (targetAble == "friendly_minion" && battlefield[id]["field"] == ((turn+1)%2))){
         return true;
       }
       else{
@@ -1323,4 +1729,80 @@ function canBeTargeted(id){
   else{
     false;
   }
+}
+
+function playDeathSound(cardName){
+  sound++;
+
+  document.getElementsByTagName("source")[3+sound%2].src = "sounds/minions/"+cardName+"/"+cardName+"_death.ogg";
+  document.getElementsByTagName("audio")[3+sound%2].load();
+  document.getElementsByTagName("audio")[3+sound%2].play();
+}
+
+function playAttackSound(cardName){
+  sound++;
+
+  document.getElementsByTagName("source")[2+sound%2].src = "sounds/minions/"+cardName+"/"+cardName+"_attack.ogg";
+  document.getElementsByTagName("audio")[2+sound%2].load();
+  document.getElementsByTagName("audio")[2+sound%2].play();
+}
+
+function playSummonSound(cardName){
+  sound++;
+
+  document.getElementsByTagName("source")[1+sound%2].src = "sounds/minions/"+cardName+"/"+cardName+"_play.ogg";
+  document.getElementsByTagName("audio")[1+sound%2].load();
+  document.getElementsByTagName("audio")[1+sound%2].play();
+}
+
+function playDrawSound(){
+  sound++;
+
+  document.getElementsByTagName("source")[5].src = "sounds/ui/drawcard_"+(sound%3+1)+".ogg";
+  document.getElementsByTagName("audio")[5].load();
+  document.getElementsByTagName("audio")[5].play();
+}
+
+function playTurnSound(){
+  document.getElementsByTagName("source")[6].src = "sounds/ui/turn_start.ogg";
+  document.getElementsByTagName("audio")[6].load();
+  document.getElementsByTagName("audio")[6].play();
+  document.getElementsByTagName("source")[7].src = "sounds/ui/turn_end.ogg";
+  document.getElementsByTagName("audio")[7].load();
+  document.getElementsByTagName("audio")[7].play();
+}
+
+function playLandSound(){
+  sound++;
+
+  document.getElementsByTagName("source")[7].src = "sounds/ui/landing_"+(sound%5+1)+".ogg";
+  document.getElementsByTagName("audio")[7].load();
+  document.getElementsByTagName("audio")[7].play();
+  document.getElementsByTagName("source")[5].src = "sounds/ui/play_card_from_hand_"+(sound%3+1)+".ogg";
+  document.getElementsByTagName("audio")[5].load();
+  document.getElementsByTagName("audio")[5].play();
+}
+
+function playHoverSound(){
+  document.getElementsByTagName("source")[8].src = "sounds/ui/mouse_over_card.ogg";
+  document.getElementsByTagName("audio")[8].load();
+  document.getElementsByTagName("audio")[8].play();
+}
+
+function getCardName(id){
+  let cardName = "";
+  let holder = "";
+
+  if(document.getElementsByClassName(id)[0]){
+    cardName = document.getElementsByClassName(id)[0].getElementsByClassName("card--header")[0].innerText.replace(/\s/g, '').toLowerCase();
+  }
+
+  for(let i = 0; i < cardName.length; i++){
+    if(Number(cardName[i]) >= 0){}
+    else{
+      holder+=cardName[i];
+    }
+  }
+
+  return holder;
 }
